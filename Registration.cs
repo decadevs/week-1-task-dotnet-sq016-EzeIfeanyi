@@ -19,6 +19,8 @@ namespace BankConsoleApp
                 Pin = pin
             };
 
+            ModelData.usersList.Add(user);
+
             Account account = new Account();
 
             if (type == AccountType.Savings)
@@ -32,8 +34,7 @@ namespace BankConsoleApp
 
             account.AccountHolderId = account.Id;
             user.AccountId.Add(account.Id);
-
-            ModelData.usersList.Add(user);
+                        
             ModelData.accountsList.Add(account);
             ModelData.LoginInfo.Add(account.AccountNumber, user.Password);
 

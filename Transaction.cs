@@ -46,35 +46,29 @@ namespace BankConsoleApp
 
         public void DepositFund(Account account, decimal fund)
         {
-            string pin = SecretInput.GetSecret("pin");
+            var acc = this.getDeposit(account, fund);
 
-            if (getUserPin(account.AccountHolderId) != pin)
-            {
-                Console.WriteLine("Wrong transaction PIN");
-                return;
-            }
-            else
-            {
-                PreviousBalance = account.AccountBalance;
-                account.AccountBalance += fund;
-                NewBalance = account.AccountBalance + fund;
+            PreviousBalance = acc.AccountBalance;
+            acc.AccountBalance += fund;
+            NewBalance = acc.AccountBalance;
+            hasDepositedOnce = true;
 
-                // Update account transaction
-                AccountPaying = account;
-                this.fund = fund;
 
-                account.TransactionIds.Add(this.TransactionId);
-            }
+            // Update account transaction
+            AccountPaying = acc;
+            this.fund = fund;
 
-            var index = ModelData.accountsList.FindIndex(a => a.Id == account.Id);
+            acc.TransactionIds.Add(this.TransactionId);
+
+            var index = ModelData.accountsList.FindIndex(a => a.Id == acc.Id);
 
             if (index == -1)
             {
-                ModelData.accountsList.Insert(0, account);
+                ModelData.accountsList.Insert(0, acc);
             }
             else
             {
-                ModelData.accountsList.Insert(index, account);
+                ModelData.accountsList.Insert(index, acc);
             }
 
             Console.Clear();
@@ -82,7 +76,7 @@ namespace BankConsoleApp
             Console.WriteLine("Previous Balance: {0}", PreviousBalance);
             Console.WriteLine("Amount credited: {0}", fund);
             Console.WriteLine("Current Account Balance: {0}", NewBalance);
-                                                
+
             Console.WriteLine("\n\n\npress any key to return to menu");
             Console.ReadLine();
 
@@ -99,6 +93,7 @@ namespace BankConsoleApp
 
                 Console.WriteLine("\n\n\npress any key to return to menu");
                 Console.ReadLine();
+
 
                 Program.currentUserActivities(account);
             }
@@ -125,6 +120,8 @@ namespace BankConsoleApp
 
                     account.AccountBalance -= fund;
 
+                    account.TransactionIds.Add(this.TransactionId);
+
                     // Update account transaction
                     AccountPaying = account;
                     this.fund = fund;
@@ -132,9 +129,7 @@ namespace BankConsoleApp
                     Console.WriteLine("we are here now 1");
 
                     Console.ReadLine();
-
-                    account.TransactionIds.Add(this.TransactionId);
-
+                    
                     Console.Clear();
                     Console.WriteLine("\nAccount Updated Successfully");
                     Console.WriteLine("Previous Balance: {0}", PreviousBalance);
@@ -150,8 +145,6 @@ namespace BankConsoleApp
                 {
                     if (account.AccountBalance - fund < 0)
                     {
-                        throw new Exception("Exceeded Withdrawal limit... Minimum balance is less than zero");
-
                         Console.WriteLine("\n\n\npress any key to return to menu");
                         Console.ReadLine();
 
@@ -162,11 +155,11 @@ namespace BankConsoleApp
 
                     account.AccountBalance -= fund;
 
+                    account.TransactionIds.Add(this.TransactionId);
+
                     // Update account transaction
                     AccountPaying = account;
                     this.fund = fund;
-
-                    account.TransactionIds.Add(this.TransactionId);
 
                     Console.Clear();
                     Console.WriteLine("\nAccount Updated Successfully");
@@ -223,7 +216,7 @@ namespace BankConsoleApp
                 Console.WriteLine("Amount credited: {0}", fund);
                 Console.WriteLine("Current Account Balance: {0}", NewBalance);
                 Console.WriteLine("Beneficiary's Account Number: {0}", accReceiving);
-                Console.WriteLine("Beneficiary's Account Balance: {0}", receiving);
+                Console.WriteLine("Beneficiary's Account Balance: {0}", receiving.AccountBalance);
 
                 Console.WriteLine("\n\n\npress any key to return to menu");
                 Console.ReadLine();
@@ -231,7 +224,23 @@ namespace BankConsoleApp
                 Program.currentUserActivities(paying);
             }
         }
-            
+
+        private Account getDeposit(Account acc, decimal amount)
+        {
+            string pin = SecretInput.GetSecret("pin");
+
+            if (getUserPin(acc.AccountHolderId) != pin)
+            {
+                Console.WriteLine("Wrong transaction PIN");
+            }
+            else
+            {
+                return acc;
+            }
+
+            return acc;
+        }
+
         private string getUserPin(int id)
         {
             var users = ModelData.usersList;
