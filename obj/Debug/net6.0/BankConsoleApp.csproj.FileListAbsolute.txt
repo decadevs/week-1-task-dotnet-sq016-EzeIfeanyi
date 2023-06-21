@@ -1,0 +1,15 @@
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\bin\Debug\net6.0\BankConsoleApp.exe
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\bin\Debug\net6.0\BankConsoleApp.deps.json
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\bin\Debug\net6.0\BankConsoleApp.runtimeconfig.json
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\bin\Debug\net6.0\BankConsoleApp.dll
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\bin\Debug\net6.0\BankConsoleApp.pdb
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.AssemblyInfo.cs
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.dll
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\refint\BankConsoleApp.dll
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.pdb
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\BankConsoleApp.genruntimeconfig.cache
+C:\Users\Decagon\Source\Repos\EzeIfeanyi\BankConsoleApp\BankConsoleApp\obj\Debug\net6.0\ref\BankConsoleApp.dll
