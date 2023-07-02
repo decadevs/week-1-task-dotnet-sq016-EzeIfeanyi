@@ -1,11 +1,12 @@
 ﻿namespace BankConsoleApp
 {
-    internal interface IUser
+    public interface IUser
     {
-        IEnumerable<int> AccountId { get; set; }
-        string FirstName { get; set; }
         int Id { get; set; }
-        string LastName { get; set; }
-        string Password { get; set; }
+        string? FirstName { get; set; }
+        string? LastName { get; set; }
+        string? Email { get; set; }
+        string? Password { get; set; }
+        IEnumerable<int> AccountId { get; set; }
     }
 }

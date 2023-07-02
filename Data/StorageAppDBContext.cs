@@ -4,9 +4,9 @@ namespace BankConsoleApp.Data
 {
     internal class StorageAppDBContext : DbContext
     {
-        public DbSet<User> Users => Set<User>();
-        public DbSet<Account> Accounts => Set<Account>();
-        public DbSet<Transaction> Transactions => Set<Transaction>();
+        public DbSet<IUser> Users => Set<IUser>();
+        public DbSet<IAccount> Accounts => Set<IAccount>();
+        public DbSet<ITransaction> Transactions => Set<ITransaction>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

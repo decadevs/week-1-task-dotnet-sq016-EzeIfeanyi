@@ -2,13 +2,12 @@
 
 namespace BankConsoleApp
 {
-    internal interface IAccount
+    public interface IAccount
     {
-        string AccountNumber { get; set; }
-        string Address { get; set; }
+        string? AccountNumber { get; set; }
         decimal Balance { get; set; }
         int Id { get; set; }
-        IEnumerable<int> TransactionId { get; set; }
+        IEnumerable<int>? TransactionId { get; set; }
         AccountType Type { get; set; }
 
         string DisplayAccountStatement();
