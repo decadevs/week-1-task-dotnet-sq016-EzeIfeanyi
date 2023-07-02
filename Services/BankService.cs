@@ -1,4 +1,4 @@
-﻿namespace BankConsoleApp
+﻿namespace BankConsoleApp.Services
 {
     internal class BankService
     {

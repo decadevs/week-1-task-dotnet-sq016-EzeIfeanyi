@@ -2,7 +2,7 @@
 
 namespace BankConsoleApp.Repos
 {
-    internal class TransactionRepository
+    internal class TransactionRepository : ITransactionRepository
     {
         private DbContext _db;
         private DbSet<ITransaction> _dbSet;
@@ -22,19 +22,19 @@ namespace BankConsoleApp.Repos
             return _dbSet.Find(id);
         }
 
-        //public IEnumerable<ITransaction> GetAll()
-        //{
-        //    return _dbSet.OrderBy(item => item.Id).ToList();
-        //}
+        public IEnumerable<ITransaction> GetAll()
+        {
+            return _dbSet.OrderBy(item => item.TransactionId).ToList();
+        }
         public void Add(ITransaction employee)
         {
             _dbSet.Add(employee);
         }
 
-        //public void Remove(ITransaction item)
-        //{
-        //    _dbSet.Remove(item);
-        //}
+        public void Remove(ITransaction item)
+        {
+            _dbSet.Remove(item);
+        }
 
         public void Save()
         {

@@ -2,7 +2,7 @@
 
 namespace BankConsoleApp.Repos
 {
-    internal class UserRepository
+    internal class UserRepository : IUserRepository
     {
         private DbContext _db;
         private DbSet<IUser> _dbSet;
@@ -14,7 +14,7 @@ namespace BankConsoleApp.Repos
 
         public User CreateUser()
         {
-            return new ();
+            return new();
         }
 
         public IUser? GetById(int id)
@@ -22,19 +22,19 @@ namespace BankConsoleApp.Repos
             return _dbSet.Find(id);
         }
 
-        //public IEnumerable<IUser> GetAll()
-        //{
-        //    return _dbSet.OrderBy(item => item.Id).ToList();
-        //}
+        public IEnumerable<IUser> GetAll()
+        {
+            return _dbSet.OrderBy(item => item.Id).ToList();
+        }
         public void Add(IUser employee)
         {
             _dbSet.Add(employee);
         }
 
-        //public void Remove(IUser item)
-        //{
-        //    _dbSet.Remove(item);
-        //}
+        public void Remove(IUser item)
+        {
+            _dbSet.Remove(item);
+        }
 
         public void Save()
         {

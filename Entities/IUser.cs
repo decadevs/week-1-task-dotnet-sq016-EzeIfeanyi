@@ -7,6 +7,6 @@
         string? LastName { get; set; }
         string? Email { get; set; }
         string? Password { get; set; }
-        IEnumerable<int> AccountId { get; set; }
+        List<int> AccountId { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BankConsoleApp.Services;
 
 namespace BankConsoleApp
 {
@@ -52,19 +53,19 @@ namespace BankConsoleApp
             switch(option)
             {
                 case "1":
-                    user = AccountServices.Transactions();
+                    user = AccountServices.Transactions(user);
                     break;
 
                 case "2":
-                    user = AccountServices.CreateAccount();
+                    user = AccountServices.CreateAccount(user);
                     break;
 
                 case "3":
-                    AccountServices.DisplayAccountStatement();
+                    AccountServices.DisplayAccountStatement(user);
                     break;
 
                 case "4":
-                    AccountServices.Logout();
+                    AccountServices.Logout(user);
                     break;
 
                 default:

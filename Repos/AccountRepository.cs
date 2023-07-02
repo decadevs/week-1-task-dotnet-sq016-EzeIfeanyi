@@ -2,7 +2,7 @@
 
 namespace BankConsoleApp.Repos
 {
-    internal class AccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private DbContext _db;
         private DbSet<IAccount> _dbSet;
@@ -22,19 +22,19 @@ namespace BankConsoleApp.Repos
             return _dbSet.Find(id);
         }
 
-        //public IEnumerable<IAccount> GetAll()
-        //{
-        //    return _dbSet.OrderBy(item => item.Id).ToList();
-        //}
+        public IEnumerable<IAccount> GetAll()
+        {
+            return _dbSet.OrderBy(item => item.Id).ToList();
+        }
         public void Add(IAccount employee)
         {
             _dbSet.Add(employee);
         }
 
-        //public void Remove(IAccount item)
-        //{
-        //    _dbSet.Remove(item);
-        //}
+        public void Remove(IAccount item)
+        {
+            _dbSet.Remove(item);
+        }
 
         public void Save()
         {

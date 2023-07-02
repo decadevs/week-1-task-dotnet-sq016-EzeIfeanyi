@@ -11,5 +11,6 @@ namespace BankConsoleApp
         decimal Amount { get; set; }
         string? Note { get; set; }
         TransactType Type { get; set; }
+        int TransactionId { get; set; }
     }
 }

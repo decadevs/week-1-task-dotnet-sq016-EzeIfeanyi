@@ -4,7 +4,8 @@ namespace BankConsoleApp
 {
     internal class Transaction : ITransaction
     {
-        readonly int TransactionId;
+        private int _TransactionId;
+        public int TransactionId { get; set; }
 
         readonly DateTime dateTime;
         public TransactType Type { get; set; }
